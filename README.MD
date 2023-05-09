@@ -14,9 +14,9 @@ This project is made to calculate the following call options:
 by 3 methods:
 - Monte Carlo simulations
 - Exact solution by the Black-Sholes formula
-- Numerical solution of Black-Sholes partial differential equation.
+- Numerical solution of the Black-Sholes partial differential equation.
 
-The code implemented on python. Exact solution for european call and exotic ones rewritten from Shreve (see below), Monte Carlo simulations for exotics uses joint distribution for Wiener process and it's maximum on $[0,T]$, pde solved by Crank-Nicolson scheme. Computational details described below.
+The code is implemented on python. Exact solution for european call and exotic ones rewritten from Shreve (see below), Monte Carlo simulations for exotics uses joint distribution for Wiener process and it's maximum on $[0,T]$, pde solved by Crank-Nicolson scheme. Computational details described below.
 
 This project is made during the MSc program "Financial mathematics and financial technologies" in Sirius University, Sochi, Russia.
 # Examples

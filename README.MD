@@ -24,7 +24,7 @@ Examples of using this code coulde be found in example.ipynb notebook.
 
 # Mathematical basis
 Calculations mainly based on "Shreve, Stochastic Calculus for Finance II - Continuous Time Models, Springer Finance-v.2, Springer-2004".
-For price of call option $V(S, t)$ (where $t$ - time, $S$ - price of underlying asset at time $t = 0$) we have the following:
+For price of call option $V(S, t)$ (where $t$ - time, $S$ - price of underlying asset) we have the following:
 ## European call
 European call is classical option with payoff:
 ```math
@@ -145,4 +145,4 @@ with initial and border conditions:
 \\ u(z, \tau) (e^{z} - 1) = u_{z}(z, \tau), \quad z = 1
 \end{cases}
 ```
-After calculations and return to initial variables the value of option price at $t = T$ could be computed as: $V(z = 1, t) \cdot S_0$.
+After calculations and return to initial variables the value of option price could be computed as: $V(z = 1, t = 0) \cdot S_0$.

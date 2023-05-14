@@ -56,7 +56,7 @@ with initial and border conditions:
 ```
 This equation could be significantly simplified by variable substitution: 
 ```math
-x = \log{\frac{S}{K}}, \quad \tau = \frac{1}{2} \sigma^2 (T - t), u(x, \tau) = e^{-x} \frac{V(S, t)}{K} .
+x = \log{\frac{S}{K}}, \quad \tau = \frac{1}{2} \sigma^2 (T - t), \quad u(x, \tau) = e^{-x} \frac{V(S, t)}{K} .
 ```
 This substitution leads to the equation:
 ```math
@@ -81,7 +81,7 @@ V(S(0), T) = \frac{1}{N} \sum_{j = 1}^{N} e^{-r T} \left( S(T) - K \right)_{+} \
 where $I_j$ - indicator function, which equals to 0, if asset S exceeded the barrier, or equals to 1 else. 
 More precisely this indicator equals to probability that:
 ```math
-P\left( Max( \hat{W}_t) < b \: | \: W_T = \hat{W}_t \right)  = 1 - e^{2 b \frac{K - b}{T}},
+P\left( Max( \hat{W}_t) < b \: | \: \hat{W}_T = k \right)  = 1 - e^{2 b \frac{k - b}{T}},
 ```
 where $\hat{W_t} = W_t + a t$ - Wiener process by new measure with $a = \frac{r - \sigma^2 / 2} {\sigma} $; $b = \frac{1}{\sigma} \log{\frac{B}{S_0}}$ - barrier value for Wiener process. 
 The formula above coulde be derived from joint distribution density function of $Max(\hat{W_t}) = m$ and $\hat{W_T} = k$:

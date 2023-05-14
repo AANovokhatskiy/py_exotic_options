@@ -79,18 +79,18 @@ Barrier call option is considered as exotic option, which value becomes equal to
 V(S(0), T) = \frac{1}{N} \sum_{j = 1}^{N} e^{-r T} \left( S(T) - K \right)_{+} \cdot I_j,
 ```
 where $I_j$ - indicator function, which equals to 0, if asset S exceeded the barrier, or equals to 1 else. 
-More precisely this indicator equals to probability that:
+More precisely this indicator equals to probability to get $Max(\hat{W}_t)$ with specified $\hat{W}_T$ (where maximum is calculated over [0, T] interval]):
 ```math
 P\left( Max( \hat{W}_t) < b \: | \: \hat{W}_T = k \right)  = 1 - e^{2 b \frac{k - b}{T}},
 ```
-where $\hat{W_t} = W_t + a t$ - Wiener process by new measure with $a = \frac{r - \sigma^2 / 2} {\sigma} $; $b = \frac{1}{\sigma} \log{\frac{B}{S_0}}$ - barrier value for Wiener process. 
-The formula above coulde be derived from joint distribution density function of $Max(\hat{W_t}) = m$ and $\hat{W_T} = k$:
+where $\hat{W_t} = W_t + a t$ - Wiener process by new measure with $a = \frac{r - \sigma^2 / 2} {\sigma} $; $b = \frac{1}{\sigma} \log{\frac{B}{S_0}}$ - barrier value for Wiener process, $\hat{W_T} = k$ - value of Wiener process at $t = T$.
+The formula above coulde be derived from joint distribution density function for random variables $Max(\hat{W_t}) = m$ and $\hat{W_T} = k$:
 ```math
 p(m, k) = 2 \frac{(2 m - k)} {T \sqrt{2 \pi T}} e^{a k - \frac{a^2}{2 T} \frac{(2 m - k)^2}{2 T} }
 ```
 by integrating from $-\infty$ to $\infty$ on $k$, and from $-\infty$ to $b$ on $m$.
 
-It should be mentioned, that method described below differs from methods where full trajectories are generated. The latter method is much simplier to implement and do not require knowledge of joint distribution of $W_t$ and $Max(W_t)$. But the crucial problem with this method is that when you generete trajectory and come up close to barrier during time $dt$ you may exceed the barrier and than fall back lower. So you will not establish that you have to reject this trajectory. Therefore by using this simple method you will always get overestimated result. To avoid this you have to increase number of trajectories and number of steps during one trajectory. Computational costs would increse as $O(n_{trajectories}, n_{steps})$. That is very expensive.
+It should be mentioned, that method described above differs from methods where full trajectories are generated. The latter method is much simplier to implement and do not require knowledge of joint distribution of $W_t$ and $Max(W_t)$. But the crucial problem with this method is that when you generete trajectory and come up close to barrier during time $dt$ you may exceed the barrier and than fall back lower. So you will not establish that you have to reject this trajectory. Therefore by using this simple method you will always get overestimated result. To avoid this you have to increase number of trajectories and number of steps during one trajectory. Computational costs would increse as $O(n_{trajectories}, n_{steps})$. That is very expensive.
 The main advantage of method described above is that in every step you only need to generate one random value and calculate probability by simple formula.
 
 ### PDE solution

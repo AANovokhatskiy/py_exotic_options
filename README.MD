@@ -83,7 +83,7 @@ More precisely this indicator equals to probability to get $Max(\hat{W}_t)$ with
 ```math
 P\left( Max( \hat{W}_t) < b \: | \: \hat{W}_T = k \right)  = 1 - e^{2 b \frac{k - b}{T}},
 ```
-where $\hat{W_t} = W_t + a t$ - Wiener process by new measure with $a = \frac{r - \sigma^2 / 2} {\sigma} $ (this process is also Wiener's because of Girsanov's theorem); $b = \frac{1}{\sigma} \log{\frac{B}{S_0}}$ - barrier value for Wiener process, $\hat{W_T} = k$ - value of Wiener process at $t = T$.
+where $\hat{W_t} = W_t + a t$ - Wiener process by new measure with $a = \frac{r - \sigma^2 / 2} {\sigma}$ (this process is also Wiener's because of Girsanov's theorem); $b = \frac{1}{\sigma} \log{\frac{B}{S_0}}$ - barrier value for Wiener process, $\hat{W_T} = k$ - value of Wiener process at $t = T$.
 The formula above coulde be derived from joint distribution density function for random variables $Max(\hat{W_t}) = m$ and $\hat{W_T} = k$ (see Shreve):
 ```math
 p(m, k) = 2 \frac{(2 m - k)} {T \sqrt{2 \pi T}} e^{a k - \frac{a^2}{2 T} \frac{(2 m - k)^2}{2 T} }
